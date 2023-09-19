@@ -28,11 +28,5 @@ const onCardClick = (event) => {
         const activeCard = document.getElementsByClassName('card active')[0];
         activeCard.classList.remove('active')
         selectectCard.classList.add('active')
-        selectectCard.addEventListener('transitionend', onCardTransitionEnd)
     }
-}
-
-const onCardTransitionEnd = (event) => {
-    const card = event.currentTarget;
-    card.removeEventListener('transitionend', onCardTransitionEnd);
 }
