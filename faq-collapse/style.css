@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  
+  background-color: rgb(237, 237, 237);
+}
+
+.container{ 
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px 30px;
+  width: 600px;
+  position: relative;
+  overflow: hidden;
+
+  margin: 10px 0;
+  transition: all 200ms ease-in-out;
+}
+
+.container.active{
+  background-color: #ffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container.active::before,
+.container.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: #2ecc71;
+  font-size: 7rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.container.active::before {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  color: lightblue;
+
+  top:-10px;
+  left: -20px;
+  transform: rotateY(180deg);
+}
+
+.container .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .header .fa-times-circle{
+  display: none;
+}
+
+.container .header h2{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.container .body,
+.container .header .fa-times-circle,
+.container.active .header .fa-chevron-down{
+  display: none;
+}
+
+.container.active .body,
+.container.active .header .fa-times-circle,
+.cotnainer .header .fa-chevron-down{
+  display: block;
+}
+
+.icon-size{
+  font-size:1.5em;
+  cursor:pointer;
+}
+
+.fas{
+  cursor: pointer;
+}
